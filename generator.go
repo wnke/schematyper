@@ -494,7 +494,6 @@ func processType(s *metaSchema, pName, pDesc, path, parentPath string) (typeRef 
 		sf := structField{
 			PropertyName: propName,
 			Required:     required.Has(propName),
-			PtrForOmit:   true,
 		}
 
 		var fieldName string
@@ -595,6 +594,8 @@ func processType(s *metaSchema, pName, pDesc, path, parentPath string) (typeRef 
 			default:
 				sf.TypePrefix = typeEmptyInterfaceSlice
 			}
+		} else {
+			sf.PtrForOmit = true
 		}
 
 		gt.Fields = append(gt.Fields, sf)

@@ -1,8 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "required": ["nonnullalble"],
   "properties": {
-    "type": {
+    "nullalble": {
+      "type": "integer",
+      "additionalProperties": false,
+      "description": "type of message"
+    },
+    "nonnullalble": {
       "type": "integer",
       "additionalProperties": false,
       "description": "type of message"
