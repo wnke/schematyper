@@ -17,7 +17,7 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 
 	"github.com/gedex/inflector"
-	"github.com/idubinskiy/schematyper/stringset"
+	"github.com/wnke/schematyper/stringset"
 )
 
 //go:generate schematyper --root-type=metaSchema --prefix=meta metaschema.json
@@ -494,6 +494,7 @@ func processType(s *metaSchema, pName, pDesc, path, parentPath string) (typeRef 
 		sf := structField{
 			PropertyName: propName,
 			Required:     required.Has(propName),
+			PtrForOmit:   true,
 		}
 
 		var fieldName string
